@@ -30,12 +30,17 @@
         <h2>Which Pokemon are You Looking to Catch Today?</h2>
     </header>
     
-    <div class="search-button">
+    <form class="search-button" onsubmit="handleSubmit(event)">
         <label for="Search for a Title">Search for a Pokemon Here</label>
         <input type="text" id="search-pokemon" placeholder="Pokemon">
         <br>
         <button id="search-for-pokemon">Search Pokemon</button>
+    </form>
+
+    <div id="pokemon-info">
+        
     </div>
     
+    <script src="PokemonSearchPage.js"></script>
 </body>
 </html>

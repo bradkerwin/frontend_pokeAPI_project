@@ -1,3 +1,4 @@
+console.log("Testing");
 async function fetchPokemonData(pokemonName) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`); // Obtaining the info from the website.
     const pokemonData = await response.json(); // Converts the fetched data into an object.
@@ -5,10 +6,14 @@ async function fetchPokemonData(pokemonName) {
     return pokemonData;
 }
 
-document.addEventListener("submit", async ()=>{
-    const pokemonData = await fetchPokemonData("pokemon");
+const handleSubmit = async (event)=>{
+    event.preventDefault(); // Prevents the page from refreshing upon a submit event.
+    const pokemonName = document.getElementById("search-pokemon").value;
+    console.log(pokemonName);
+    const pokemonData = await fetchPokemonData(pokemonName);
     const pokemonInfoElement = document.getElementById("pokemon-info");
 
+  
     pokemonInfoElement.innerHTML = `<h2>${pokemonData.name}</h2>
     <img src="${pokemonData.sprites.front_default}" alt="${pokemonData.name}">
     <h3>Abilities</h3>
@@ -20,7 +25,7 @@ document.addEventListener("submit", async ()=>{
     <h3>Sounds:</h3>
     <audio src="${pokemonData.cries.latest}" controls></audio><br>
     <audio src="${pokemonData.cries.legacy}" controls></audio>`
-})
+}
 
 async function displayUserData() {
     try{
@@ -34,8 +39,4 @@ async function displayUserData() {
     }
   }
 
-let searchPokemonBtn = document.getElementById('pokemon-deatils'); 
 
-searchPokemonBtn.addEventListener('click', function() {
-    document.location.href="PokemonDetailsPage.html"
-}); 
