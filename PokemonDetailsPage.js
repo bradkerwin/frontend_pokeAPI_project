@@ -26,8 +26,7 @@ async function displayUserData() {
     try{
       const userData = await fetchPokemonData();
       const userInfoElement = document.getElementById("pokemon-info");
-    //   userInfoElement.textContent = `Name: ${userData.name}, 
-    //   Age: ${userData.age}, Email: ${userData.email}`;
+    
     }
     catch(error){
       console.log("Error fetching data:", error);
