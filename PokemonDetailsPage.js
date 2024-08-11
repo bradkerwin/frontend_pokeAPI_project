@@ -9,18 +9,26 @@ document.addEventListener("submit", async ()=>{
     const pokemonData = await fetchPokemonData("pokemon");
     const pokemonInfoElement = document.getElementById("pokemon-info");
 
-    pokemonInfoElement.innerHTML = `<h2>${pokemonData.name}</h2>
-    <img src="${pokemonData.sprites.front_default}" alt="${pokemonData.name}">
-    <h3>Abilities</h3>
-    <ul>
-        ${pokemonData.abilities.map(a => `<li>${a.ability.name}</li>`).join("")}
-    </ul>
-    <h3>Base Experience</h3>
-    <p>${pokemonData.base_experience}</p>
-    <h3>Sounds:</h3>
-    <audio src="${pokemonData.cries.latest}" controls></audio><br>
-    <audio src="${pokemonData.cries.legacy}" controls></audio>`
-})
+    pokemonInfoElement.innerHTML = 
+    `
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">${pokemonData.name}</h2>
+        <img src="${pokemonData.sprites.front_default}" alt="${pokemonData.name}">
+        <h3>Abilities</h3>
+        <ul>
+            ${pokemonData.abilities.map(a => `<li>${a.ability.name}</li>`).join("")}
+        </ul>
+        <h3>Base Experience</h3>
+        <p>${pokemonData.base_experience}</p>
+        <h3>Sounds:</h3>
+        <audio src="${pokemonData.cries.latest}" controls></audio><br>
+        <audio src="${pokemonData.cries.legacy}" controls></audio>
+      </div> 
+    </div>
+      `
+  })
+  
 
 async function displayUserData() {
     try{
