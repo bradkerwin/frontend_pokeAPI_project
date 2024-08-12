@@ -11,13 +11,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="PokemonSearchPage.css">
+
 </head>
 <body>
     <header>
-        <h2 class="Heading text-center">Which Pokemon are You Looking to Catch Today?</h2>
+        <h2 class="Heading text-center">Which Pokemon Are You Looking to Catch Today?</h2>
     </header>
     
-    <div class="container bg-warning mt-3">
+    <div class="container my-box bg-warning mt-3">
         <form class="search-button mt-3" onsubmit="handleSubmit(event)">
             <label for="Search for a Title">Search for a Pokemon Here</label>
             <input type="text" id="search-pokemon" placeholder="Pokemon">
@@ -31,5 +33,10 @@
         
         <script src="PokemonSearchPage.js"></script>
     </div>
+
+    <footer class="footer mt-4">
+        &copy; 2024 Brad Kerwin. All Rights Reserved.
+    </footer>
+
 </body>
 </html>
